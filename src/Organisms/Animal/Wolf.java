@@ -1,0 +1,27 @@
+package Organisms.Animal;
+
+import main.Position;
+import main.World;
+
+public class Wolf extends Animal{
+    public Wolf(Position position, World world){
+        super(8,5,position,20,16,"W",world);
+
+
+    }
+    @Override
+    public void initParams() {
+        this.setPower(8);
+        this.setInitiative(5);
+        this.setLiveLength(20);
+        this.setPowerToReproduce(16);
+        this.setSign("W");
+    }
+
+    @Override
+    public Organism clone() {
+        return new Sheep(this.getPosition(),this.getWorld());
+    }
+
+}
+
