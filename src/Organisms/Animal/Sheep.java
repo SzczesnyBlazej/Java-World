@@ -4,12 +4,25 @@ package Organisms.Animal;
 import main.Position;
 import main.World;
 
+import java.util.ArrayList;
+
 public class Sheep extends Animal {
     public Sheep(Position position, World world){
         super(3,3,position,10,6,"G",world);
 
 
     }
+
+    @Override
+    public ArrayList move() {
+        return null;
+    }
+
+    @Override
+    public ArrayList action() {
+        return null;
+    }
+
     @Override
     public void initParams() {
         this.setPower(3);
@@ -21,7 +34,8 @@ public class Sheep extends Animal {
 
     @Override
     public Organism clone() {
-        return new Sheep(this.getPosition(),this.getWorld());
+        return null;
     }
+
 
 }
