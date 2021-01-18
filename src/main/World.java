@@ -1,4 +1,6 @@
 package main;
+import Organisms.Animal.Organism;
+import Organisms.Animal.Wolf;
 
 import java.util.ArrayList;
 
@@ -7,7 +9,8 @@ public class World {
     private final int Y;
     private int turn;
     private ArrayList<Organism> Organisms = new ArrayList<Organism>();
-    String separator=" ";
+    String separator = " ";
+
 
     public World(int x, int y) {
         X = x;
@@ -27,7 +30,7 @@ public class World {
     }
 
     public void setTurn(int turn) {
-        this.turn +=1;
+        this.turn += 1;
     }
 
     public ArrayList<Organism> getOrganisms() {
@@ -46,25 +49,16 @@ public class World {
         this.separator = separator;
     }
 
-    public String toString(){
-        String result="\nTurn:"+this.getTurn()+"\n";
-        for(int Y=0;Y<this.Y;Y++){
-            for(int X=0;X<this.X;X++){
-                Organism organism = this.getOrganismFromPosition(new Position(X,Y));
-                if(organism!=null){
-                    result+=organism.toString();
-                }
-                else {
-                    result+=separator;
-                }
+    public String toString() {
+        String result = "\nTurn:" + this.getTurn() + "\n";
+        for (int Y = 0; Y < this.Y; Y++) {
+            for (int X = 0; X < this.X; X++) {
+                System.out.println("-");
             }
-            result+="\n";
+            this.setTurn(getTurn());
+
         }
-        this.setTurn(getTurn());
+
         return result;
     }
-    public ArrayList filterFreePositions(Position position){
-
-    }
-
 }
