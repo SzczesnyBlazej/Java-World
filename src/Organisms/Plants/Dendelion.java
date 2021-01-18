@@ -18,7 +18,6 @@ public class Dendelion extends Plant {
         this.setSign("D");
         this.setPowerToReproduce(3);
 
-        return null;
     }
 
     @Override

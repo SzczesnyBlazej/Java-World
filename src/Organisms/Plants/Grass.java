@@ -21,6 +21,6 @@ public class Grass extends Plant{
         this.setLiveLength(6);
         this.setSign("G");
         this.setPowerToReproduce(3);
-        return null;
+
     }
 }

@@ -20,24 +20,11 @@ public abstract class Plant extends Organism {
 
     @Override
     public ArrayList action() {
-        ArrayList<Action> actions=new ArrayList<>() ;
+        ArrayList<Action> actions = new ArrayList<>();
         Organism newPlant;
         Position newPosition;
-        if(this.ifReproduce()){
-            ArrayList<Position> pomPosition =this.getFreeNeighbornPosition(this.position);
-            if(!pomPosition.isEmpty()){
-                java.util.Random random=new java.util.Random();
-                int newPositionIndex=random.nextInt(pomPosition.size());
-                newPosition=pomPosition.get(newPositionIndex);
-                newPlant=this.clone();
-                newPlant.setPosition(newPosition);
-                this.setPower(this.getPower()/2);
-                actions.add(new Action(ActionEnum.ADD,newPosition,0,newPlant));
-            }
-        }
+
         return actions;
     }
-    public ArrayList getFreeNeighbornPosition(Position position){
-        return this.world.filterFreePositions(this.getFreeNeighbornPosition(position));
-    }
+
 }
